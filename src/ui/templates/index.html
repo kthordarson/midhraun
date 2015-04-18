@@ -1,8 +1,10 @@
-{% extends "base.html" %}
+{% extends "skeleton.html" %}
 {% load staticfiles %}
 
-{% block content %}
-    <a href="{% url 'login' %}">
-        <img id="midhraun" alt="midhraun.is" src="{% static "img/midhraun.jpg" %}" />
-    </a>
+{% block body %}
+    <div class="main_container">
+        <a href="{% url 'login' %}">
+            <img id="midhraun" alt="midhraun.is" src="{% static "img/midhraun.jpg" %}" />
+        </a>
+    </div>
 {% endblock %}

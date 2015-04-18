@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render_to_response
+from horses.models import Category, Horse
 
 
 def index(request):
@@ -6,4 +9,24 @@ def index(request):
 
 
 def home(request):
-    return render_to_response('home.html')
+    cat = Category(name='Graðhestar')
+    horse = Horse(name="Þeyr")
+    categories = {
+        cat.name: {
+            'horses': [horse, Horse(name="Álfhildur")]
+        },
+        "Ræktunarmerar Íslandi": {
+            'horses': [Horse(name="Álfadrottning frá Austurkoti")]
+        }
+    }
+    return render_to_response('home.html', {'categories': categories})
+
+
+def new_horse(request):
+    from django.http import HttpResponse
+    return HttpResponse()
+
+
+def categories(request):
+    from django.http import HttpResponse
+    return HttpResponse()

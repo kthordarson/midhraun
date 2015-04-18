@@ -1,0 +1,123 @@
+﻿body
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: #ffffff;
+	font-family:Microsoft Sans Serif;
+	font-size: 10pt;
+	color: Black;
+}
+
+a:link
+{
+	color: Black;
+	text-decoration: underline;
+}
+
+a:active
+{
+	color: Yellow;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: Black;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: blue;
+	text-decoration:underline;
+}
+
+
+.buttons
+{
+	border-width: 0;
+	margin: 0 0 0 0;
+	border: solid 2px black;
+	padding: 10px 20px;
+	font-family:Times New Roman;
+	font-weight:bold;
+}
+
+
+.divcenter
+{
+	margin: auto;
+}
+
+.columnheader
+{
+	font-weight:bolder;
+	border-bottom: solid 2px Grey;
+}
+
+.headline
+{
+	font-weight:bold;
+	text-align:left;
+}
+
+.header_bg
+{
+	border: solid 2px Grey;
+	background-color: #909090;
+}
+
+.main_container
+{
+	margin:20px 20px 20px 20px;
+}
+
+.columnitem
+{
+	text-align:left;
+}
+
+.mh_table
+{
+	border: solid 2px Grey;
+	background-color: #eeeeee;
+}
+
+.mh_table_row
+{
+	height:25px;
+	background-color: #d0d0d0;
+}
+
+.mh_table_row_alt
+{
+	height:25px;
+	background-color: #eeeeee;
+}
+
+.picturetable
+{
+    width: 501px;
+    height: 357px;
+}
+.picturetable tr
+{
+    margin: 0px;
+    padding: 0px;
+}
+.picturetable td
+{
+    border: 1px solid Black;
+    margin: 0px;
+    padding: 0px;
+}
+.picturetable img
+{
+    margin: 3px;
+}
+
+.viewtdleft 
+{
+     width: 400px;
+     border: solid 2px Black;
+}

@@ -1,5 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-home
+    <div id="ctl00_ContentPlaceHolder1_divMain">
+        {% for name, data in categories.items %}
+            <div class="mh_flokkur">
+                <span id="ctl00_ContentPlaceHolder1_rptFlokkar_ctl01_lblFlokkur">{{ name }}</span>
+                <br />
+                <table class="mh_table">
+                    <tbody>
+                        <tr>
+                            <td class="columnheader">Nafn</td>
+                            <td colspan="3" class="columnheader">Aðgerðir</td>
+                        </tr>
+                        {% for horse in data.horses %}
+                            <tr class="mh_table_row">
+                                <td class="columnitem" style="width: 150px;">
+                                    {{ horse.name }}
+                                </td>
+                                <td class="columnitem" style="width: 120px;">
+                                    Vinnubók
+                                </td>
+                                <td class="columnitem" style="width: 90px;">
+                                    Breyta
+                                </td>
+                                <td class="columnitem" style="width: 90px;">
+                                    Eyða
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
