@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -15,3 +16,10 @@ class Horse(models.Model):
     father = models.ForeignKey('self')
     mother = models.ForeignKey('self')
     category = models.ForeignKey('Category')
+
+
+class Log(models.Model):
+    date = models.DateField()
+    user = models.ForeignKey(User)
+    description = models.TextField()
+    # TODO: category, sub-category/details, results

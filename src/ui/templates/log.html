@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span style="font-size:Larger;font-weight:bold;">{{ horse.name }}, vinnubók</span>
+    <div id="ctl00_ContentPlaceHolder1_divMain">
+        <br>
+        <br>
+        <input type="submit" name="btnBack" value="Til baka" id="btnBack" class="buttons">&nbsp;&nbsp;
+        <input type="submit" name="btnNewEntry" value="Ný færsla" id="btnNewEntry" class="buttons">
+        <br>
+        <br>
+            
+    </div>
+    <br />
+    <br />
+    {% if log %}
+        <table class="mh_table" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="columnheader" style="width: 90px;">
+                        Dags
+                    </td>
+                    <td class="columnheader" style="width: 120px;">
+                        Tegund
+                    </td>
+                    <td class="columnheader" style="width: 120px;">
+                        Nánar
+                    </td>
+                    <td class="columnheader" style="width: 120px;">
+                        Notandi
+                    </td>
+                    <td class="columnheader">
+                        Lýsing
+                    </td>
+                    <td class="columnheader">&nbsp;</td>
+                </tr>
+            
+                {% for entry in log %}
+                    <tr class="mh_table_row">
+                        <td class="columnitem">
+                            <span>{{ entry.date | date:"d.m.Y" }}</span>
+                        </td>
+                        <td class="columnitem">
+                            <span>{{ entry.category }}</span>
+                        </td>
+                        <td class="columnitem">
+                            <span>{{ entry.details }}</span>
+                        </td>
+                        <td class="columnitem">
+                            <span>{{ entry.user.username }}</span>
+                        </td>
+                        <td class="columnitem">
+                            <span><b>{{ entry.results }}</b>: {{ entry.description }}<br></span>
+                        </td>
+                        <td>
+                            Eyða
+                        </td>
+                    </tr>
+                {% endfor %}
+                    
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
