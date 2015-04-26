@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <form name="horseform" method="post" action="{% url 'horses.views.new_horse' %}">
+        {% csrf_token %}
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td align="left">
+                            {{ form.name.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.name }}
+                        </td>
+                        <td>
+                            {{ form.name.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.color.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.color }}
+                        </td>
+                        <td>
+                            {{ form.color.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.owner.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.owner }}
+                        </td>
+                        <td>
+                            {{ form.owner.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.breeder.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.breeder }}
+                        </td>
+                        <td>
+                            {{ form.breeder.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.birthdate.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.birthdate }}
+                        </td>
+                        <td>
+                            {{ form.birthdate.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.identity.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.identity }}
+                        </td>
+                        <td>
+                            {{ form.identity.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.father.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.father }}
+                            &nbsp;- <input type="submit" value="Bæta við" id="addFather" class="buttons"> <!-- TODO: impl btn handler -->
+                        </td>
+                        <td>
+                            {{ form.father.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.mother.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.mother }}
+                            &nbsp;- <input type="submit" value="Bæta við" id="addMother" class="buttons"> <!-- TODO: impl btn handler -->
+                        </td>
+                        <td>
+                            {{ form.mother.errors }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            {{ form.category.label_tag }}
+                        </td>
+                        <td>
+                            {{ form.category }}
+                        </td>
+                        <td>
+                            {{ form.category.errors }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input type="submit" name="cancel" value="Hætta við" class="buttons">&nbsp;&nbsp;
+            <input type="submit" name="ok" value="OK" class="buttons">
+            <br>
+            <br>
+
+        </div>
+    </form>
+    <script type="text/javascript">
+        $(function() {
+            $('#{{ form.birthdate.auto_id }}').datepicker({
+                dateFormat: "dd.mm.yy"
+            });
+        });
+    </script>
+{% endblock %}

@@ -22,11 +22,6 @@ def home(request):
     return render_to_response('home.html', {'categories': categories})
 
 
-def new_horse(request):
-    from django.http import HttpResponse
-    return HttpResponse()
-
-
 def categories(request):
     from django.http import HttpResponse
     return HttpResponse()

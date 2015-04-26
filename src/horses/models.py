@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Horse(models.Model):
     name = models.CharField(max_length=255)
@@ -13,9 +16,17 @@ class Horse(models.Model):
     breeder = models.CharField(max_length=255)
     identity = models.CharField(max_length=255)
     birthday = models.DateField()
-    father = models.ForeignKey('self')
-    mother = models.ForeignKey('self')
+    father = models.ForeignKey('Parent', related_name='father')
+    mother = models.ForeignKey('Parent', related_name='mother')
     category = models.ForeignKey('Category')
+
+
+class Parent(models.Model):
+    name = models.CharField(max_length=255)
+    identity = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Log(models.Model):
