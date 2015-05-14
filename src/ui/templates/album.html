@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="ctl00_ContentPlaceHolder1_divManagePictures">
+        <input type="submit" name="btnDeleteImgs" value="Eyða völdum" id="btnDeleteImgs" class="buttons">
+        <div id="album">
+            {% for title, album in albums.items %}
+                <div class="horseAlbum">
+                    <span class="title">{{ title }}</span>
+                    {% for image in album %}
+                        <div class="imageContainer">
+                            <img src="{{ image.image.url }}" />
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <input type="submit" name="btnAdd" value="Bæta við" id="btnAdd" class="buttons">
+    </div>
+{% endblock %}

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'ui',
     'horses',
+    'album',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -93,6 +94,11 @@ TEMPLATE_DIRS = (
     os.path.join(SRC_DIR, 'ui', 'templates'),
 )
 
+# Uploads
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'uploads')
+MEDIA_URL = '/uploads/'
+
+# Settings used by RequireLoginMiddleware
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/home/'
 

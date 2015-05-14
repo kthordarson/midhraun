@@ -4,3 +4,36 @@
     height: 426px;
     display: block;
 }
+
+#album {
+    margin-top: 20px;
+}
+
+.horseAlbum {
+    width: 515px;
+    padding: 0px;
+    text-align: left;
+}
+
+.horseAlbum .title {
+    display: block;
+    font-size: 1.3em;
+    font-weight: bold;
+    background: #eee;
+    border: 1px solid grey;
+    padding: 3px;
+    text-align: center;
+}
+
+.horseAlbum .imageContainer {
+    display: inline-block;
+    width: 159px;
+    height: 111px;
+    padding: 0px;
+    margin-left: 8px;
+}
+
+.horseAlbum .imageContainer img {
+    width: 159px;
+    height: 111px;
+}
